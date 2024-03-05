@@ -19,7 +19,7 @@ class linkedlist
         void InsertTail(element*);
         bool DeleteFirst();
         void Travel();
-        
+        void RemoveAll();
     protected:
 
 

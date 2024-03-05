@@ -5,18 +5,21 @@ using namespace std;
 
 int main()
 {
-    linkedlist *list_=new linkedlist();
+    linkedlist *list_ = new linkedlist();
     element *e;
-    e=new element(9);
+    e = new element(9);
     list_->InsertTail(e);
-    e=new element(10);
-     list_->InsertTail(e);
-    e=new element(8);
-     list_->InsertTail(e);
+    e = new element(10);
+    list_->InsertTail(e);
+    e = new element(8);
+    list_->InsertTail(e);
 
     list_->Travel();
     list_->DeleteFirst();
-    cout<<"\n";
-     list_->Travel();
+    cout << "\n";
+    list_->Travel();
+    cout << "\n";
+    list_->RemoveAll();
+    list_->Travel();
     return 0;
 }
