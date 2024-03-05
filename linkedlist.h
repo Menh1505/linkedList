@@ -18,12 +18,13 @@ class linkedlist
         void InsertFirst(element*);
         void InsertTail(element*);
         bool DeleteFirst();
+        bool DeleteTail();
         void Travel();
         void RemoveAll();
         int SumList();
         int Max();
         int Count();
-        void Add(element*, element*);
+        bool Add(element*, element*);
     protected:
 };
 

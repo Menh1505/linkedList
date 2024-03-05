@@ -57,11 +57,26 @@ bool linkedlist::DeleteFirst()
         return true;
     }
 }
+bool linkedlist::DeleteTail()
+{
+    if (this->tail == nullptr)
+        return false;
+    else
+    {
+        element *p = this->head;
+        while (p->GetPointer() != this->tail)
+            p = p->GetPointer();
+        this->tail->Setpointer(p);
+        p = p->GetPointer();
+        delete p;
+        return true;
+    }
+}
 void linkedlist::RemoveAll()
 {
     do
     {
-        element* tmp = this->head;
+        element *tmp = this->head;
         this->head = this->head->GetPointer();
         delete tmp;
     } while (this->head != this->tail);
@@ -85,7 +100,7 @@ int linkedlist::Max()
     p = p->GetPointer();
     while (p != nullptr)
     {
-        if(res < p->Getdata())
+        if (res < p->Getdata())
         {
             res = p->Getdata();
         }
@@ -104,17 +119,20 @@ int linkedlist::Count()
     }
     return res;
 }
-void linkedlist::Add(element* pos, element* val)
+bool linkedlist::Add(element *pos, element *val)
 {
+    bool success = false;
     element *p = this->head;
     while (p != nullptr)
     {
-        if(p == pos)
+        if (p == pos)
         {
+            success = true;
             val->Setpointer(p->GetPointer());
             p->Setpointer(val);
             break;
         }
         p = p->GetPointer();
     }
+    return success;
 }
