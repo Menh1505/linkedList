@@ -104,3 +104,17 @@ int linkedlist::Count()
     }
     return res;
 }
+void linkedlist::Add(element* pos, element* val)
+{
+    element *p = this->head;
+    while (p != nullptr)
+    {
+        if(p == pos)
+        {
+            val->Setpointer(p->GetPointer());
+            p->Setpointer(val);
+            break;
+        }
+        p = p->GetPointer();
+    }
+}

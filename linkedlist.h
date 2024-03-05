@@ -23,9 +23,8 @@ class linkedlist
         int SumList();
         int Max();
         int Count();
+        void Add(element*, element*);
     protected:
-
-
 };
 
 #endif // LINKEDLIST_H
