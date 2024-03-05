@@ -67,3 +67,14 @@ void linkedlist::RemoveAll()
     } while (this->head != this->tail);
     delete this->head;
 }
+int linkedlist::SumList()
+{
+    int res = 0;
+    element *p = this->head;
+    while (p != nullptr)
+    {
+        res += p->Getdata();
+        p = p->GetPointer();
+    }
+    return res;
+}

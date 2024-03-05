@@ -20,6 +20,7 @@ class linkedlist
         bool DeleteFirst();
         void Travel();
         void RemoveAll();
+        int SumList();
     protected:
 
 
