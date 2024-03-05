@@ -21,6 +21,7 @@ class linkedlist
         void Travel();
         void RemoveAll();
         int SumList();
+        int Max();
     protected:
 
 

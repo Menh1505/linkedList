@@ -78,3 +78,18 @@ int linkedlist::SumList()
     }
     return res;
 }
+int linkedlist::Max()
+{
+    element *p = this->head;
+    int res = p->Getdata();
+    p = p->GetPointer();
+    while (p != nullptr)
+    {
+        if(res < p->Getdata())
+        {
+            res = p->Getdata();
+        }
+        p = p->GetPointer();
+    }
+    return res;
+}
