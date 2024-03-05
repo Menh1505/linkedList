@@ -72,15 +72,21 @@ bool linkedlist::DeleteTail()
         return true;
     }
 }
-void linkedlist::RemoveAll()
+bool linkedlist::RemoveAll()
 {
-    do
+    if (this->head == nullptr)
+        return false;
+    else
     {
-        element *tmp = this->head;
-        this->head = this->head->GetPointer();
-        delete tmp;
-    } while (this->head != this->tail);
-    delete this->head;
+        do
+        {
+            element *tmp = this->head;
+            this->head = this->head->GetPointer();
+            delete tmp;
+        } while (this->head != this->tail);
+        delete this->head;
+    }
+    return true;
 }
 int linkedlist::SumList()
 {
@@ -134,5 +140,32 @@ bool linkedlist::Add(element *pos, element *val)
         }
         p = p->GetPointer();
     }
+    return success;
+}
+bool linkedlist::Delete(element* pos)
+{
+    bool success = false;
+    element* p = this->head;
+    while (p != nullptr)
+    {
+        if(p->GetPointer()->Getdata() == pos->Getdata())
+        {
+            element* tmp = p->GetPointer();
+            if(p->GetPointer()->GetPointer() != nullptr)
+            {
+                p->Setpointer(tmp->GetPointer());
+            }
+            else
+            {
+                p->Setpointer(nullptr);
+            }
+            delete tmp;
+            success = true;
+            break;
+        }
+        p = p->GetPointer();
+    }
+    if(success)
+        this->nNum--;
     return success;
 }

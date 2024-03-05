@@ -13,6 +13,12 @@ int main()
     list_->InsertTail(e);
     e = new element(8);
     list_->InsertTail(e);
+    e = new element(11);
+    list_->InsertTail(e);
+    e = new element(20);
+    list_->InsertTail(e);
+    e = new element(3);
+    list_->InsertTail(e);
 
     cout << "\n================================\n";
     cout << list_->Count();
@@ -22,6 +28,9 @@ int main()
     list_->Travel();
     list_->DeleteFirst();
     cout << "\n================================\n";
+    list_->Travel();
+    cout << "\n================================\n";
+    list_->Delete(new element(20));
     list_->Travel();
     cout << "\n================================\n";
     list_->RemoveAll();

@@ -20,11 +20,12 @@ class linkedlist
         bool DeleteFirst();
         bool DeleteTail();
         void Travel();
-        void RemoveAll();
+        bool RemoveAll();
         int SumList();
         int Max();
         int Count();
         bool Add(element*, element*);
+        bool Delete(element*);
     protected:
 };
 
