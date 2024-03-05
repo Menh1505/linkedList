@@ -69,6 +69,7 @@ bool linkedlist::DeleteTail()
         this->tail->Setpointer(p);
         p = p->GetPointer();
         delete p;
+        this->nNum--;
         return true;
     }
 }
@@ -131,7 +132,7 @@ bool linkedlist::Add(element *pos, element *val)
     element *p = this->head;
     while (p != nullptr)
     {
-        if (p == pos)
+        if (p->Getdata() == pos->Getdata())
         {
             success = true;
             val->Setpointer(p->GetPointer());
@@ -140,6 +141,8 @@ bool linkedlist::Add(element *pos, element *val)
         }
         p = p->GetPointer();
     }
+    if(success)
+        this->nNum++;
     return success;
 }
 bool linkedlist::Delete(element* pos)
