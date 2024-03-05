@@ -14,11 +14,16 @@ int main()
     e = new element(8);
     list_->InsertTail(e);
 
+    cout << "\n================================\n";
+    cout << list_->Count();
+    cout << "\n===============================\n";
+    cout << list_->Max();
+    cout << "\n===============================\n";
     list_->Travel();
     list_->DeleteFirst();
-    cout << "\n";
+    cout << "\n================================\n";
     list_->Travel();
-    cout << "\n";
+    cout << "\n================================\n";
     list_->RemoveAll();
     list_->Travel();
     return 0;

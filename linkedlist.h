@@ -22,6 +22,7 @@ class linkedlist
         void RemoveAll();
         int SumList();
         int Max();
+        int Count();
     protected:
 
 
