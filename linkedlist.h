@@ -26,6 +26,7 @@ class linkedlist
         int Count();
         bool Add(element*, element*);
         bool Delete(element*);
+        int CountX(int);
     protected:
 };
 

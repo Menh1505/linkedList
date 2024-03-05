@@ -172,3 +172,13 @@ bool linkedlist::Delete(element* pos)
         this->nNum--;
     return success;
 }
+int linkedlist::CountX(int val)
+{
+    int res = 0;
+    
+    for(element* p = this->head; p != nullptr; p = p->GetPointer())
+    {
+        if(p->Getdata() == val) res++;
+    }
+    return res++;
+}
